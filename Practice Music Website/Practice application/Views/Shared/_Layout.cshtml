@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - helloworlds</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+   
+    <div class="navbar navbar-inverse navbar-fixed-top col-md-12">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar">Hidden</span>
+                </button>
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle aMenubar" data-toggle="dropdown" href="#">Series<span class="caret"></span></a>
+                        <ul class="dropdown-menu ">
+                            <li>@Html.ActionLink("Series Overview", "Overview", "Series")</li>
+                            <li>@Html.ActionLink("TV", "TV", "Series")</li>
+                            <li>@Html.ActionLink("Animated", "Animated", "Series")</li>
+                            <li>@Html.ActionLink("Editors Picks", "EditorsPicksSeries", "Series")</li>
+                        </ul>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Music<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Music Overview", "Overview", "Music")</li>
+                            <li>@Html.ActionLink("Top 10 Tracks", "Top10", "Music")</li>
+                            <li>@Html.ActionLink("Latest Releases", "LatestReleases", "Music")</li>
+                            <li>@Html.ActionLink("Editors Picks", "EditorsPicksMusic", "Music")</li>
+                        </ul>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Movies<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Movies Overview","Overview","Movies")</li>
+                            <li>@Html.ActionLink("Top Movies", "TopMovies", "Movies")</li>
+                            <li>@Html.ActionLink("Top Animated Movies", "AnimatedMovies", "Movies")</li>
+                            <li>@Html.ActionLink("Editors Picks", "EditorsPicksMovies", "Movies")</li>
+                        </ul>
+                  
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+   
+
+<div class="container body-content">
+  
+    @RenderBody()
+
+</div>
+    <footer>
+            <div class="col-md-12">
+                <ul class="social">
+                    <li class="facebook"><a href="http://facebook.com/"><i class="fa fa-facebook fa-3x"></i></a></li>
+                    <li class="twitter"><a href="http://twitter.com/"><i class="fa fa-twitter fa-3x"></i></a></li>
+                    <li class="pinterest"><a href="http://www.pinterest.com//"><i class="fa fa-pinterest-p fa-3x"></i></a></li>
+                </ul>
+            </div>
+        
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+       </footer>
+</body>
+</html>
